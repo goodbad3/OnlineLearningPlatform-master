@@ -1,0 +1,419 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}首页 - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <!-- Slid Sec -->
+    <section class="slid-sec">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Main Slider  -->
+                    <div class="col-md-9 no-padding">
+
+                        <!-- Main Slider Start -->
+                        <div class="tp-banner-container">
+                            <div class="tp-banner">
+                                <ul>
+
+                                    <!-- SLIDE  -->
+                                    {% for banner in all_banner %}
+                                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+                                            <!-- MAIN IMAGE -->
+                                            <img src="{{ banner.image.url }}" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                                            <!-- LAYER NR. 1 -->
+                                            <div class="tp-caption sfl tp-resizeme"
+                                                 data-x="left" data-hoffset="60"
+                                                 data-y="center" data-voffset="-110"
+                                                 data-speed="800"
+                                                 data-start="800"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="chars"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.03"
+                                                 data-endelementdelay="0.4"
+                                                 data-endspeed="300"
+                                                 style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">生活太苦了
+                                            </div>
+
+                                            <!-- LAYER NR. 2 -->
+                                            <div class="tp-caption sfr tp-resizeme"
+                                                 data-x="left" data-hoffset="60"
+                                                 data-y="center" data-voffset="-60"
+                                                 data-speed="800"
+                                                 data-start="1000"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="chars"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.03"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;">一定要加你这颗糖
+                                            </div>
+
+                                            <!-- LAYER NR. 3 -->
+                                            <div class="tp-caption sfl tp-resizeme"
+                                                 data-x="left" data-hoffset="60"
+                                                 data-y="center" data-voffset="10"
+                                                 data-speed="800"
+                                                 data-start="1200"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="none"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Good good study
+                                            </div>
+
+                                            <!-- LAYER NR. 1 -->
+                                            <div class="tp-caption sfr tp-resizeme"
+                                                 data-x="left" data-hoffset="210"
+                                                 data-y="center" data-voffset="5"
+                                                 data-speed="800"
+                                                 data-start="1300"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-splitin="chars"
+                                                 data-splitout="none"
+                                                 data-elementdelay="0.03"
+                                                 data-endelementdelay="0.4"
+                                                 data-endspeed="300"
+                                                 style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">Day day up!
+                                            </div>
+
+                                            <!-- LAYER NR. 4 -->
+                                            <div class="tp-caption lfb tp-resizeme scroll"
+                                                 data-x="left" data-hoffset="60"
+                                                 data-y="center" data-voffset="80"
+                                                 data-speed="800"
+                                                 data-start="1300"
+                                                 data-easing="Power3.easeInOut"
+                                                 data-elementdelay="0.1"
+                                                 data-endelementdelay="0.1"
+                                                 data-endspeed="300"
+                                                 data-scrolloffset="0"
+                                                 style="z-index: 8;"><a href="{{ banner.url }}" target="_blank" class="btn-round big">了解详情</a></div>
+                                        </li>
+                                    {% endfor %}
+
+                                    <!-- SLIDE  -->
+                                    {#                                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">#}
+                                    {#                                        <!-- MAIN IMAGE -->#}
+                                    {#                                        <img src="images/slider-img-2.jpg" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 1 -->#}
+                                    {#                                        <div class="tp-caption sfl tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="-110"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="800"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="chars"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.03"#}
+                                    {#                                             data-endelementdelay="0.4"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">No restocking fee ($35#}
+                                    {#                                            savings)#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 2 -->#}
+                                    {#                                        <div class="tp-caption sfr tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="-60"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1000"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="chars"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.03"#}
+                                    {#                                             data-endelementdelay="0.1"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;">M75 Sport Watch#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 3 -->#}
+                                    {#                                        <div class="tp-caption sfl tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="10"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1200"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="none"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.1"#}
+                                    {#                                             data-endelementdelay="0.1"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Now Only#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 1 -->#}
+                                    {#                                        <div class="tp-caption sfr tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="210"#}
+                                    {#                                             data-y="center" data-voffset="5"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1300"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="chars"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.03"#}
+                                    {#                                             data-endelementdelay="0.4"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">$320.99#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 4 -->#}
+                                    {#                                        <div class="tp-caption lfb tp-resizeme scroll"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="80"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1300"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-elementdelay="0.1"#}
+                                    {#                                             data-endelementdelay="0.1"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             data-scrolloffset="0"#}
+                                    {#                                             style="z-index: 8;"><a href="#." class="btn-round big">Shop Now</a></div>#}
+                                    {#                                    </li>#}
+
+                                    <!-- SLIDE  -->
+                                    {#                                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">#}
+                                    {#                                        <!-- MAIN IMAGE -->#}
+                                    {#                                        <img src="images/slider-img-3.jpg" alt="slider" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 1 -->#}
+                                    {#                                        <div class="tp-caption sfl tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="-110"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="800"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="chars"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.03"#}
+                                    {#                                             data-endelementdelay="0.4"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 5; font-size:30px; font-weight:500; color:#888888;  max-width: auto; max-height: auto; white-space: nowrap;">Get Free Bluetooth when buy#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 2 -->#}
+                                    {#                                        <div class="tp-caption sfr tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="-60"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1000"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="chars"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.03"#}
+                                    {#                                             data-endelementdelay="0.1"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;">Flat SmartWatch#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 3 -->#}
+                                    {#                                        <div class="tp-caption sfl tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="0"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1200"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="none"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.1"#}
+                                    {#                                             data-endelementdelay="0.1"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Combo Only:#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 1 -->#}
+                                    {#                                        <div class="tp-caption sfr tp-resizeme"#}
+                                    {#                                             data-x="left" data-hoffset="240"#}
+                                    {#                                             data-y="center" data-voffset=" -5"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1300"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-splitin="chars"#}
+                                    {#                                             data-splitout="none"#}
+                                    {#                                             data-elementdelay="0.03"#}
+                                    {#                                             data-endelementdelay="0.4"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">$590.00#}
+                                    {#                                        </div>#}
+                                    {##}
+                                    {#                                        <!-- LAYER NR. 4 -->#}
+                                    {#                                        <div class="tp-caption lfb tp-resizeme scroll"#}
+                                    {#                                             data-x="left" data-hoffset="60"#}
+                                    {#                                             data-y="center" data-voffset="80"#}
+                                    {#                                             data-speed="800"#}
+                                    {#                                             data-start="1300"#}
+                                    {#                                             data-easing="Power3.easeInOut"#}
+                                    {#                                             data-elementdelay="0.1"#}
+                                    {#                                             data-endelementdelay="0.1"#}
+                                    {#                                             data-endspeed="300"#}
+                                    {#                                             data-scrolloffset="0"#}
+                                    {#                                             style="z-index: 8;"><a href="#." class="btn-round big">Shop Now</a></div>#}
+                                    {#                                    </li>#}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Slider  -->
+                    <div class="col-md-3 no-padding">
+
+                        <!-- New line required  -->
+                        <div class="product">
+                            <div class="like-bnr">
+                                <div class="position-center-center">
+                                    <h4>最热门的机构</h4>
+                                    <a href="{% url 'organization:org_home' first_org.id %}"><h5>“{{ first_org.name }}”</h5></a>
+                                    <span class="price">{{ first_org.desc }}</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Slaes  -->
+                        <div class="week-sale-bnr">
+                            <h4>{{ first_teacher.name }}<span>最具实力的讲师</span></h4>
+                            <p>{{ first_teacher.points }}</p>
+                            <a href="{% url 'teacher:teacher_detail' first_teacher.id %}" class="btn-round">了解讲师</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div id="content">
+
+        <!-- Shipping Info -->
+        <section class="shipping-info">
+            <div class="container">
+                <ul>
+
+                    <!-- Free Shipping -->
+                    <li>
+                        <div class="media-left"><i class="flaticon-delivery-truck-1"></i></div>
+                        <div class="media-body">
+                            <h5>专业权威</h5>
+                            <span>好评度极高</span></div>
+                    </li>
+                    <!-- Money Return -->
+                    <li>
+                        <div class="media-left"><i class="flaticon-arrows"></i></div>
+                        <div class="media-body">
+                            <h5>课程最新</h5>
+                            <span>课程保持最新</span></div>
+                    </li>
+                    <!-- Support 24/7 -->
+                    <li>
+                        <div class="media-left"><i class="flaticon-operator"></i></div>
+                        <div class="media-body">
+                            <h5>名师授课</h5>
+                            <span>专业教师课程指导</span></div>
+                    </li>
+                    <!-- Safe Payment -->
+                    <li>
+                        <div class="media-left"><i class="flaticon-business"></i></div>
+                        <div class="media-body">
+                            <h5>数据真实</h5>
+                            <span> </span></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- Top Selling Week -->
+        <section class="light-gry-bg padding-top-60 padding-bottom-30">
+            <div class="container">
+
+                <!-- heading -->
+                <div class="heading">
+                    <h2>公开课程</h2>
+                    <hr>
+                </div>
+
+                <!-- Items -->
+                <div class="item-col-5">
+
+                    <!-- Product -->
+                    <div class="product col-2x">
+                        <div class="like-bnr" style="background: #f5f5f5 url({% static 'platform/images/course_banner.png' %}) right center no-repeat;">
+                            <div class="position-center-center">
+                                <h5>{{ banner_course.name }}</h5>
+                                <p>{{ banner_course.desc }}<span>讲师：{{ banner_course.teacher.name }} | 课时：{{ banner_course.learn_times }} minutes</span></p>
+                                <a href="{% url 'course:course_detail' banner_course.id %}" class="btn-round">查看详情</a></div>
+                        </div>
+                    </div>
+
+                    <!-- Product -->
+                    {% for course in courses %}
+                        <a href="{% url 'course:course_detail' course.id %}">
+                            <div class="product">
+                                <article>
+                                    <img class="img-responsive" style="height: 160px; width: 100%;"
+                                         src="{% if course.image %}{{ course.image.url }}{% else %}{% static 'platform/images/default-course.png' %}{% endif %}" alt="">
+                                    {% if course.add_time|date:"Y-m-d" == time_now|date:"Y-m-d" %}<span class="new-tag">今天</span>{% endif %}
+
+                                    <!-- Content -->
+                                    <span class="tag">{{ course.course_org.name }}</span>
+                                    <div class="tittle" style="min-height: 2px;">{{ course.name }}</div>
+                                    <p>{{ course.get_degree_display }}</p>
+                                    <!-- Reviews -->
+                                    <p class="rev">
+                                        <i class="fa fa-group" title="学习人数"></i> {{ course.students }}
+                                        <span class="margin-left-36"><i class="fa fa-star" title="收藏人数"></i> {{ course.fav_nums }}</span>
+                                        <span class="margin-left-36"><i class="fa fa-mouse-pointer" title="点击数"></i> {{ course.click_nums }}</span>
+                                    </p>
+                                    <p>讲师：{{ course.teacher.name }}</p>
+                                    <div class="price">课时： {{ course.learn_times }}分钟</div>
+                                </article>
+                            </div>
+                        </a>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Top Selling Week -->
+        <section class="padding-top-60 padding-bottom-60">
+            <div class="container">
+
+                <!-- heading -->
+                <div class="heading">
+                    <h2>课程机构</h2>
+                    <hr>
+                </div>
+                <div id="blog-slide" class="with-nav">
+
+                    <!-- Blog Post -->
+                    {% for course_org in course_orgs %}
+                        <div class="blog-post">
+                            <article>
+                                <img class="img-responsive" style="max-width: 360px; max-height: 224px" src="{% if course_org.image %}{{ course_org.image.url }}{% else %}{% static 'platform/images/default-course.png' %}{% endif %}" alt="">
+                                <br>
+                                <span><i class="fa fa-star" title="收藏数"></i> {{ course_org.fav_nums }}</span> <span><i class="fa fa-mouse-pointer" title="点击数"></i> {{ course_org.click_nums }}</span>
+                                <a href="{% url 'organization:org_home' course_org.id %}" class="tittle">{{ course_org.name }}</a>
+                                <p>{{ course_org.desc }}</p>
+                                <a href="{% url 'organization:org_home' course_org.id %}">查看详细</a></article>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- End Content -->
+
+{% endblock %}
